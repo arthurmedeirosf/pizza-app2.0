@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pizza Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/style.css" />
+
+</head>
+
+<body>
+    <div class="content">
+        <h1>Order form</h1>
+        <br>
+
+        <form action="/orders/confirm" method="POST">
+            <br>
+            Address<br>
+            <input type="text" name="address" required><br>
+            <br>
+            Phone<br>
+            <input type="tel" name="phone" id="phone" required><br>
+
+            <br>
+            <p><b>Select your pizza size:</b></p>
+            <% dataSize.forEach(function(size) { %>
+            <input type="radio" name="size" value="<%= size.description %>:<%= size.price %>">
+            <%= size.description %><br>
+            <% }); %>
+            <br>
+            <p><b>Select your toppings:</b></p>
+            <% dataToppings.forEach(function(topping) { %>
+            <input type="checkbox" name="toppings" value="<%= topping.description %>:<%= topping.price %>">
+            <%= topping.description %>
+            <% }); %><br>
+            <br>
+            <p><b>Select your Crust:</b></p>
+            <% dataCrust.forEach(function(crust) { %>
+            <input type="radio" name="crust" value="<%= crust.description %>:<%= crust.price %>">
+            <%= crust.description %>
+            <% }); %>
+
+            <br>
+            <br>
+            <p><b></b>Select the quantity: </b></p>
+            <select name="qty">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br><br>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+</body>
+
+</html>

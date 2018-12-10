@@ -1,0 +1,43 @@
+<html>
+
+<body>
+	<div class="content">
+		<form action="/orders" method="POST">
+
+			<p> Address:
+				<%=address%>
+			</p>
+			<input type="hidden" name="address" value="<%=address%>">
+
+			<p> Phone:
+				<%=phone%>
+			</p>
+			<input type="hidden" name="phone" value="<%=phone%>">
+
+			<p> Size:
+				<%=size%>
+			</p>
+			<input type="hidden" name="size" value="<%=size%>">
+
+			<p> Toppings:
+				<%=toppings%>
+			</p>
+			<input type="hidden" name="toppings" value="<%=toppings%>">
+
+			<p> Crust:
+				<%=crust%>
+			</p>
+			<input type="hidden" name="crust" value="<%=crust%>">
+
+			<p> Total(including 5% GST):
+				<%=total%> CAD
+			</p>
+			<input type="hidden" name="total" value="<%=total%>">
+
+			<input type="button" value="Cancel" onclick="window.location.href='/'" />
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+
+</html>
